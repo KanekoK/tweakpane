@@ -29,4 +29,3 @@ let randNumber = (timer, range) => {
     return(rand(range));
   }, timer);
 }
-
