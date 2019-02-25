@@ -1,23 +1,27 @@
 'use strict';
 
 function setup() {
-  frameRate(30);
+  // frameRate(10);
   createCanvas(windowWidth, windowHeight);
-}
-
-let x;
-let y;
-function draw() {
   background(0);
-  stroke(255);
-  strokeWeight(10);
-  line(x, y, x, y);
-  x = rand(1000, 1000);
-  y = rand(1000, 1000);
 }
 
-let rand = function (range) {
-  return(Math.random() * range);
+let x = 10;
+let y = 10;
+function draw() {
+  translate(width / 2, height / 2);
+  let pre_x = x;
+  let pre_y = y;
+  x += rand(-50, 50);
+  y += rand(-50, 50);
+  stroke(rand(0, 255), rand(0, 255), rand(0, 255));
+  strokeWeight(10);
+  line(pre_x, pre_y, x, y);
+  console.log(rand(-50, 50));
+}
+
+let rand = function (min, max) {
+  return Math.random() * (max - min) + min;
 };
 
 let randNumber = (timer, range) => {
