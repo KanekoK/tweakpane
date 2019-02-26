@@ -1,5 +1,3 @@
-'use strict';
-
 function setup() {
   frameRate(3);
   createCanvas(windowWidth, windowHeight);
@@ -12,7 +10,7 @@ function draw() {
   noFill();
   stroke(rand(0, 255), rand(0, 255), rand(0, 255));
   beginShape();
-  for (var i=1; i<10; i++) {
+  for (var i=1; i<100; i++) {
     curveVertex(rand(0, 1500), rand(0, 1500));
   }
   endShape();
@@ -22,9 +20,3 @@ function draw() {
 let rand = function (min, max) {
   return Math.random() * (max - min) + min;
 };
-
-let randNumber = (timer, range) => {
-  setInterval(function(){
-    return(rand(range));
-  }, timer);
-}
